@@ -1,0 +1,307 @@
+openapi: 3.0.0
+info:
+  title: NestJS
+  version: 1.0.0
+servers:
+- url: https://nutrafusion.onrender.com
+paths:
+  /api/v1/user:
+    get:
+      tags:
+      - default
+      summary: Get User
+      operationId: apiV1UserGET
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      security:
+      - bearerAuth: []
+      x-swagger-router-controller: Default
+    post:
+      tags:
+      - default
+      summary: Create User
+      operationId: apiV1UserPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: John Doe
+                email: sdf.wick@example.com
+                password: password123
+                gender: male
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+  /api/v1/user/6405b00317923136ae61ace7:
+    get:
+      tags:
+      - default
+      summary: User By Id
+      operationId: apiV1User6405b00317923136ae61ace7GET
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+    delete:
+      tags:
+      - default
+      summary: Delete User
+      operationId: apiV1User6405b00317923136ae61ace7DELETE
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+  /api/v1/user/64113ead7eed105a1512d537:
+    put:
+      tags:
+      - default
+      summary: Update User
+      operationId: apiV1User64113ead7eed105a1512d537PUT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Jonathan Wick
+                reviews:
+                - review: Great product!
+                  rating: 4
+                - review: Great product!
+                  rating: 4
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      security:
+      - bearerAuth: []
+      x-swagger-router-controller: Default
+  /api/v1/login:
+    post:
+      tags:
+      - default
+      summary: Login User
+      operationId: apiV1LoginPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: John Doe
+                email: sdf.wick@example.com
+                password: password123
+                gender: male
+      responses:
+        "201":
+          description: Created
+          headers:
+            Date:
+              style: simple
+              explode: false
+              schema:
+                type: string
+                example: "Thu, 16 Mar 2023 03:50:12 GMT"
+            Content-Type:
+              style: simple
+              explode: false
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Transfer-Encoding:
+              style: simple
+              explode: false
+              schema:
+                type: string
+                example: chunked
+            Connection:
+              style: simple
+              explode: false
+              schema:
+                type: string
+                example: keep-alive
+            CF-Ray:
+              style: simple
+              explode: false
+              schema:
+                type: string
+                example: 7a8a07d0dd338602-BOM
+            Access-Control-Allow-Origin:
+              style: simple
+              explode: false
+              schema:
+                type: string
+                example: '*'
+            ETag:
+              style: simple
+              explode: false
+              schema:
+                type: string
+                example: W/"1c3-OLnahJVZMznXncOo+meiYGreE5A"
+            Vary:
+              style: simple
+              explode: false
+              schema:
+                type: string
+                example: Accept-Encoding
+            CF-Cache-Status:
+              style: simple
+              explode: false
+              schema:
+                type: string
+                example: DYNAMIC
+            x-powered-by:
+              style: simple
+              explode: false
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              style: simple
+              explode: false
+              schema:
+                type: string
+                example: Render
+            Server:
+              style: simple
+              explode: false
+              schema:
+                type: string
+                example: cloudflare
+            alt-svc:
+              style: simple
+              explode: false
+              schema:
+                type: string
+                example: "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"
+          content:
+            application/json:
+              schema:
+                type: object
+                x-content-type: application/json
+              example:
+                accessToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5Ad2ljay5jb20iLCJpYXQiOjE2Nzg5Mzg2MTIsImV4cCI6MTY3ODk0MjIxMn0.AtPcJ52tveWdC5_0W2ODsUaGUzWiL9hTUTyRKWb5_3E
+                user:
+                  _id: 64114f126ca721b9b230bcf3
+                  name: John Doe
+                  email: john@wick.com
+                  password: $2b$10$IejZ4dXKATi5BZi07l7FQumthg3MocQC4MCjCfIWudOIaGbx0EjeC
+                  gender: male
+                  reviews: []
+                  createdAt: 2023-03-15T04:52:34.893Z
+                  updatedAt: 2023-03-15T04:52:34.893Z
+                  __v: 0
+      x-swagger-router-controller: Default
+  /api/v1/product:
+    get:
+      tags:
+      - default
+      summary: get product
+      operationId: apiV1ProductGET
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+    post:
+      tags:
+      - default
+      summary: Create Product
+      operationId: apiV1ProductPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Japanese Gyozas
+                description: Authentic Japanese-style pork and vegetable dumplings
+                calories: 650
+                nutriscore: 74
+                rating: 4.7
+                likes: 17
+                category: vegan
+                plan: starter
+                images:
+                - url: https://example.com/gyozas.jpg
+                  alt: Picture of Japanese Gyozas
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+  /api/v1/product/6406fa7762cbb2d6f2757efe:
+    get:
+      tags:
+      - default
+      summary: Get By Id
+      operationId: apiV1Product6406fa7762cbb2d6f2757efeGET
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+    put:
+      tags:
+      - default
+      summary: Update Likes
+      operationId: apiV1Product6406fa7762cbb2d6f2757efePUT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Japanese Gyozas
+                description: Authentic Japanese-style pork and vegetable dumplings
+                calories: 650
+                likes: 8
+                nutriscore: 74
+                rating: 4.7
+                category: vegan
+                plan: starter
+                images:
+                - url: https://example.com/gyozas.jpg
+                  alt: Picture of Japanese Gyozas
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      x-swagger-router-controller: Default
+  /api/v1/product/6406f86a18cc6907d3d230da:
+    delete:
+      tags:
+      - default
+      summary: Delete Product
+      operationId: apiV1Product6406f86a18cc6907d3d230daDELETE
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+      security:
+      - bearerAuth: []
+      x-swagger-router-controller: Default
+components:
+  schemas: {}
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

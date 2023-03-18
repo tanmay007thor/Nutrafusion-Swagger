@@ -7,7 +7,8 @@
   },
   "dependencies": {
     "express": "3.x",
-    "nodemon": "^2.0.21" 
+    "nodemon": "^2.0.21",
+    "oas3-tools": "^2.2.3"
   },
   "license": "Unlicense"
 }
